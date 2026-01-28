@@ -85,7 +85,7 @@ const projects : projectProps[] = [
 
 export default function Home() {
   const [showToast, setShowToast] = useState(false);
-  const email = "maaz@example.com"; // Replace with your actual email
+  const email = "dev.maaztariq@gmail.com"; // Replace with your actual email
 
   const handleEmailClick = async () => {
     try {
