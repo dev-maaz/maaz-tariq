@@ -1,5 +1,8 @@
+"use client";
 import { StaticImageData } from "next/image";
 import ProjectCard from "./ProjectCard";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import Enrichly from "@/public/Enrichly.png";
 import Solly from "@/public/Solly.png";
 import Plunge from "@/public/Plunge.png";
@@ -14,7 +17,6 @@ import BloomCalender from "@/public/bloom_calender.png";
 import Squire from "@/public/Squire.png";
 import Invite from "@/public/Invite.png";
 import FlashMessages from "@/public/flash_messages.png";
-import MediaDesign from "@/public/media_design.png";
 import DesignerHangout from "@/public/designer_hangout.png";
 
 interface projectProps {
@@ -80,9 +82,40 @@ const projects : projectProps[] = [
     link: null,
   },
 ]
+
 export default function Home() {
+  const [showToast, setShowToast] = useState(false);
+  const email = "maaz@example.com"; // Replace with your actual email
+
+  const handleEmailClick = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setShowToast(true);
+      setTimeout(() => {
+        setShowToast(false);
+      }, 2000);
+    } catch (err) {
+      console.error("Failed to copy email:", err);
+    }
+  };
+
   return (
       <div className="flex flex-col w-full min-h-screen justify-start gap-4 p-8 bg-neutral-50 font-sans tracking-tighter">
+        {/* Toast Notification */}
+        <AnimatePresence>
+          {showToast && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.2 }}
+              className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 bg-neutral-800 text-white px-4 py-2 rounded-md text-sm shadow-lg"
+            >
+              mail copied!
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* Sidebar info (now just first section in column) */}
         <div className="flex flex-col w-full items-start justify-start gap-8">
           <div className="flex flex-col items-start justify-start gap-2 text-left w-96">
@@ -94,15 +127,20 @@ export default function Home() {
               </div>
 
               <div className="flex gap-4 pt-4">
-                <button className="flex underline text-sm tracking-normal text-neutral-600 hover:text-neutral-400 transition-colors">
+                <button 
+                  onClick={handleEmailClick}
+                  className="flex underline text-sm tracking-normal text-neutral-600 hover:text-neutral-400 transition-colors"
+                >
                   Email
                 </button>
-                <button className="flex underline text-sm tracking-normal text-neutral-600 hover:text-neutral-400 transition-colors">
+                <a 
+                  href="https://x.com/maaz_waaz" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex underline text-sm tracking-normal text-neutral-600 hover:text-neutral-400 transition-colors"
+                >
                   Twitter
-                </button>
-                <button className="flex underline text-sm tracking-normal text-neutral-600 hover:text-neutral-400 transition-colors">
-                  Linkedin
-                </button>
+                </a>
               </div>
           </div>
 

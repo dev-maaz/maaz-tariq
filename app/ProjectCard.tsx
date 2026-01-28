@@ -59,7 +59,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         const centerX = window.innerWidth / 2 - rect.left - rect.width / 2;
         const centerY = window.innerHeight / 2 - rect.top - rect.height / 2;
         
-        runAnimation(centerX, centerY, 1.4, 0.25);
+        runAnimation(centerX, centerY, 1.2, 0.25);
         setIsExpanded(true);
       }
     }
