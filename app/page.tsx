@@ -100,7 +100,7 @@ export default function Home() {
   };
 
   return (
-      <div className="flex flex-col w-full min-h-screen justify-start gap-4 p-8 bg-neutral-50 font-sans tracking-tighter">
+      <div className="flex flex-col w-full min-h-screen justify-start gap-4 p-4 md:p-8 bg-neutral-50 font-sans tracking-tighter">
         {/* Toast Notification */}
         <AnimatePresence>
           {showToast && (
@@ -118,7 +118,7 @@ export default function Home() {
 
         {/* Sidebar info (now just first section in column) */}
         <div className="flex flex-col w-full items-start justify-start gap-8">
-          <div className="flex flex-col items-start justify-start gap-2 text-left w-96">
+          <div className="flex flex-col items-start justify-start gap-2 text-left w-full md:w-96">
               <div className="flex text-lg font-semibold text-neutral-800">Maaz Tariq<br/> </div>
 
               <div className="text-md w-full text-neutral-500 font-normal ">
@@ -148,107 +148,107 @@ export default function Home() {
 
         {/* Projects grid */}
         <div className="flex flex-wrap w-full">
-        <div className="flex flex-row w-full gap-4">
+        <div className="flex flex-col md:flex-row w-full gap-4">
             <ProjectCard
               title="Bloom" 
               image={Bloom}
               link={null}
               logo={null}
-              className="flex-[1]"
+              className="w-full md:flex-[1]"
               />
             <ProjectCard
               title="Enrichly"
               image={Enrichly}
               link={null}
               logo={null}
-              className="flex-[0.612]"
+              className="w-full md:flex-[0.612]"
               />
           </div>
-          <div className="flex flex-row w-full gap-4">
+          <div className="flex flex-col md:flex-row w-full gap-4">
             <ProjectCard
               title="Squire" 
               image={Squire}
               link={null}
               logo={null}
-              className="flex-[1]"
+              className="w-full md:flex-[1]"
               />
             <ProjectCard
               title="Bounce Central"
               image={BounceCentral}
               link={null}
               logo={null}
-              className="flex-[0.638]"
+              className="w-full md:flex-[0.638]"
               />
             {/* <ProjectCard
               title="Aethel"
               image={Aethel}
               link={null}
               logo={null}
-              className="flex-[0.6725]"
+              className="w-full md:flex-[0.6725]"
               /> */}
           </div>
-          <div className="flex flex-row w-full gap-4">
+          <div className="flex flex-col md:flex-row w-full gap-4">
             <ProjectCard
               title="Bloom Calender" 
               image={BloomCalender}
               link={null}
               logo={null}
-              className="flex-1"
+              className="w-full md:flex-1"
               />
             <ProjectCard
               title="Hot Sauce Bar"
               image={HotSauceBar}
               link={null}
               logo={null}
-              className="flex-[0.56]"
+              className="w-full md:flex-[0.56]"
               />
           </div>
-          <div className="flex flex-row w-full gap-4">
+          <div className="flex flex-col md:flex-row w-full gap-4">
             <ProjectCard
               title="Designer Hangout"
               image={DesignerHangout}
               link={null}
               logo={null}
-              className="flex-[1]"
+              className="w-full md:flex-[1]"
               />
           </div>
-          <div className="flex flex-row w-full gap-4">
+          <div className="flex flex-col md:flex-row w-full gap-4">
             <ProjectCard
               title="Plunge"
               image={Plunge}
               link={null}
               logo={null}
-              className="flex-[0.715]"
+              className="w-full md:flex-[0.715]"
               />
             <ProjectCard
               title="Solly"
               image={Solly}
               link={null}
               logo={null}
-              className="flex-[1]"
+              className="w-full md:flex-[1]"
               />
           </div>
-          <div className="flex flex-row w-full gap-4">
+          <div className="flex flex-col md:flex-row w-full gap-4">
             <ProjectCard
               title="Bloom Toasts"
               image={FlashMessages}
               link={null}
               logo={null}
-              className="flex-[1]"
+              className="w-full md:flex-[1]"
               />
             <ProjectCard
               title="Bloom Access"
               image={Invite}
               link={null}
               logo={null}
-              className="flex-[0.5]"
+              className="w-full md:flex-[0.5]"
               />
             <ProjectCard
               title="Aethel"
               image={Aethel}
               link={null}
               logo={null}
-              className="flex-[0.48]"
+              className="w-full md:flex-[0.48]"
               />
           </div>
 
