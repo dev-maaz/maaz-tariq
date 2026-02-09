@@ -82,7 +82,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {isExpanded && (
           <motion.div
             key="backdrop"
-            className="fixed inset-0 bg-black/50 z-40"
+            className="fixed inset-0 bg-black/50 z-40 backdrop-blur-2xl"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -93,12 +93,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </AnimatePresence>
       <motion.div
         ref={cardRef}
-        className={`masonry-item w-full relative overflow-hidden mb-4 cursor-pointer group flex flex-col  ${className ?? ""}`}
+        className={`masonry-item w-full relative overflow-hidden cursor-pointer group flex flex-col rounded-md p-[1px] ${className ?? ""}`}
         style={{
           x,
           y,
           scale,
           zIndex: isExpanded || isAnimating ? 50 : 1,
+          // boxShadow: '0 0 0 0.5px rgba(0, 0, 0, 0.05)',
         }}
         onClick={handleClick}
         initial={false}
@@ -106,10 +107,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <Image
           src={image}
           alt={title}
-          className="w-full h-auto object-contain rounded-md"
+          className="w-full h-auto object-contain rounded-md "
+          style={{ boxShadow: '0 0 0 0.5px rgba(0, 0, 0, 0.05)' }}
           sizes=""
         />
-        <div className={`flex text-neutral-500 tracking-tighter text-xs lg:text-sm gap-1 items-center font-medium mt-1 w-[fit-content] ${isExpanded ? "px-2 py-0.5 bg-neutral-50 rounded-sm border-[1px] border-neutral-400" : ""}`}>
+        <div className="flex text-neutral-500 tracking-tighter text-xs lg:text-sm gap-1 items-center font-medium mt-1 w-[fit-content] bg-[#FAFAFA] py-1 px-2 rounded-md">
           {logo && <Image src={logo} alt="shortLogo" width={12} height={12} />}
           <span className="">{title}</span>
         </div>

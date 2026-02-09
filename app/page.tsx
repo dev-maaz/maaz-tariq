@@ -10,7 +10,7 @@ import HotSauceBar from "@/public/hot_sauce.png";
 import EnrichlyLogo from "@/public/er-short-logo.svg";
 import SollyLogo from "@/public/solly-short-logo.svg";
 import PlungeLogo from "@/public/pl-short-logo.svg";
-import BounceCentral from "@/public/bounce_central.png";
+import Resonate from "@/public/resonate.png";
 import Aethel from "@/public/aethel.png";
 import Bloom from "@/public/Bloom.png";
 import BloomCalender from "@/public/bloom_calender.png";
@@ -50,12 +50,6 @@ const projects : projectProps[] = [
     logo: null,
     image: HotSauceBar,
     link: "https://www.google.com",
-  },
-  {
-    name: "Bounce Central",
-    logo: null,
-    image: BounceCentral,
-    link: null,
   },
   {
     name: "Aethel",
@@ -129,7 +123,7 @@ export default function Home() {
               <div className="flex gap-4 pt-4">
                 <button 
                   onClick={handleEmailClick}
-                  className="flex underline text-sm tracking-normal text-neutral-600 hover:text-neutral-400 transition-colors"
+                  className="flex underline text-sm tracking-normal text-neutral-600 hover:text-neutral-400 "
                 >
                   Email
                 </button>
@@ -137,7 +131,7 @@ export default function Home() {
                   href="https://x.com/maaz_waaz" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex underline text-sm tracking-normal text-neutral-600 hover:text-neutral-400 transition-colors"
+                  className="flex underline text-sm tracking-normal text-neutral-600 hover:text-neutral-400"
                 >
                   Twitter
                 </a>
@@ -173,11 +167,11 @@ export default function Home() {
               className="w-full md:flex-[1]"
               />
             <ProjectCard
-              title="Bounce Central"
-              image={BounceCentral}
+              title="Resonate"
+              image={Resonate}
               link={null}
               logo={null}
-              className="w-full md:flex-[0.638]"
+              className="w-full md:flex-[0.72]"
               />
             {/* <ProjectCard
               title="Aethel"
@@ -230,25 +224,25 @@ export default function Home() {
           </div>
           <div className="flex flex-col md:flex-row w-full gap-4">
             <ProjectCard
-              title="Bloom Toasts"
-              image={FlashMessages}
+              title="Aethel"
+              image={Aethel}
               link={null}
               logo={null}
-              className="w-full md:flex-[1]"
+              className="w-full md:flex-[0.48]"
               />
             <ProjectCard
               title="Bloom Access"
               image={Invite}
               link={null}
               logo={null}
-              className="w-full md:flex-[0.5]"
+              className="w-full md:flex-[0.65]"
               />
             <ProjectCard
-              title="Aethel"
-              image={Aethel}
+              title="Bloom Toasts"
+              image={FlashMessages}
               link={null}
               logo={null}
-              className="w-full md:flex-[0.48]"
+              className="w-full md:flex-[1]"
               />
           </div>
 
